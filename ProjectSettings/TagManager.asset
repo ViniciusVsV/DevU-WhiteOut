@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - PaintHolder
+  - Enemy
+  - Border
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX
@@ -12,10 +16,10 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Paint
+  - EnemyWeapon
+  - PlayerWeapon
+  - Enemy
   - 
   - 
   - 
@@ -38,8 +42,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3863772081
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 1116821159
+    locked: 0
+  - name: Player
+    uniqueID: 668012135
+    locked: 0
+  - name: Particles
+    uniqueID: 2380247143
+    locked: 0
+  - name: Ground
+    uniqueID: 4099879443
+    locked: 0
+  - name: Paint
+    uniqueID: 823323577
+    locked: 0
+  - name: Foreground
+    uniqueID: 2375759421
     locked: 0
   m_RenderingLayers:
   - Default

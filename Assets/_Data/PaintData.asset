@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3c1620778e1da4cb2d444891dd4cbf, type: 3}
+  m_Name: PaintData
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.PaintData
+  paintPrefab: {fileID: 960892018629505946, guid: 96ecd0a343ddf4442b6d754314841e65, type: 3}
+  paintLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  paintHolderTag: PaintHolder
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  paintSprites:
+  - {fileID: 6859001573892978866, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
+  - {fileID: -8196366484226070513, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
+  - {fileID: 6861898870870037381, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
+  paintCheckRadius: 0
+  groundCheckRadius: 0.1
