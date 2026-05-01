@@ -234,7 +234,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -265,7 +265,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2754717, g: 0.2754717, b: 0.2754717, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -318,7 +318,9 @@ Transform:
   m_LocalPosition: {x: -0.5213504, y: -2.3795197, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 710292603}
+  - {fileID: 868825964}
   m_Father: {fileID: 42330787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -353,6 +355,68 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1001 &710292602
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 519420032}
+    m_Modifications:
+    - target: {fileID: 4933839441974671839, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_Name
+      value: Background Snow Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+--- !u!4 &710292603 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+  m_PrefabInstance: {fileID: 710292602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &782101357
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +583,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &868825963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 519420032}
+    m_Modifications:
+    - target: {fileID: 4933839441974671839, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_Name
+      value: Foreground Snow Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+--- !u!4 &868825964 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8760356034865338301, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+  m_PrefabInstance: {fileID: 868825963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1694838399
 GameObject:
   m_ObjectHideFlags: 0
