@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0ffd2454fba134d9d133c9e19e3116, type: 3}
+  m_Name: PlayerBehaviourData
+  m_EditorClassIdentifier: Assembly-CSharp::Player.BehaviourData
+  moveSpeed: 10
+  baseGravity: 4
+  fallGravity: 6
+  jumpForce: 15
+  jumpCutMultiplier: 0.5
+  extraJumps: 2
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 1
