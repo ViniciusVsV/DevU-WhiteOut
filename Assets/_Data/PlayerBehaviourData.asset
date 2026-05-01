@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0ffd2454fba134d9d133c9e19e3116, type: 3}
   m_Name: PlayerBehaviourData
   m_EditorClassIdentifier: Assembly-CSharp::Player.BehaviourData
-  moveSpeed: 10
+  moveSpeed: 8
   baseGravity: 4
   fallGravity: 6
   jumpForce: 15
   jumpCutMultiplier: 0.5
-  extraJumps: 2
+  extraJumps: 1
   coyoteTime: 0.4
   jumpBuffer: 0.2
   attackDuration: 0.1
