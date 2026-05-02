@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8759140766866834814}
   - component: {fileID: 9073036313689871508}
   m_Layer: 0
-  m_Name: Square Sprite Mask
+  m_Name: Triangle Up Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteMask:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d04404ab97ab9f4a8b30352c47ee146, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0

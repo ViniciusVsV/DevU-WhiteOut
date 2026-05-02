@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Border
   - PlayerWeapon
+  - Spike
   layers:
   - Default
   - TransparentFX
