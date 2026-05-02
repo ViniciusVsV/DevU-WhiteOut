@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Entities.Player
@@ -9,10 +11,23 @@ namespace Entities.Player
         [Header("Camera Shake")]
         public float cameraShakeStrength;
 
-        [Header("Dash")]
-        [Header("After Images")]
-        public float imageDuration;
-        public float startingAlpha;
-        public float delayBetweenImages;
+        [Header("Knockback")]
+        public float deathKnockbackDistance;
+        public float deathKnockbackDuration;
+        public Ease deathKnockbackEase;
+        public float wallDetectedOffset;
+
+        [Header("Partial Transition")]
+        public Texture2D partialTransitionTexture;
+        public float partialTransitionDuration;
+        public Ease partialTransitionEase;
+        [Range(-1, 1)] public float partialTransitionProgress;
+
+        [Header("Gunshot")]
+        [Header("Camera Recoil")]
+        public float cameraRecoilStrength;
+
+        [Header("Knockback")]
+        public float gunshotKnockbackForce;
     }
 }

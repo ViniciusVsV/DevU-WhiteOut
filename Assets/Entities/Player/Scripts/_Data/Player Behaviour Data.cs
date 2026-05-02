@@ -20,8 +20,7 @@ namespace Entities.Player
         public float jumpBuffer;
 
         [Header("Attack")]
-        public float attackDuration;
-        public float knockbackForce;
+        public float attackDelay;
 
         [Header("Death")]
         public string[] hostileTags;

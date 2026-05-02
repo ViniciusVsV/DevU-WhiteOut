@@ -12,6 +12,7 @@ namespace Entities.Player
         [Header("Player Scripts")]
         [SerializeField] private SpriteController spriteController;
         [SerializeField] private CapsuleCollider2D attackCollider;
+        [SerializeField] private EffectsController effectsController;
 
         private Rigidbody2D rb;
 
@@ -106,12 +107,11 @@ namespace Entities.Player
             canAttack = false;
             canMove = false;
 
-            rb.linearVelocityX = 0;
-            rb.AddForceX(playerBehaviourData.knockbackForce * -lastMoveDirection, ForceMode2D.Impulse);
-
             attackCollider.enabled = true;
 
-            yield return new WaitForSeconds(playerBehaviourData.attackDuration);
+            effectsController.PlayGunshotEffects(lastMoveDirection);
+
+            yield return new WaitForSeconds(playerBehaviourData.attackDelay);
 
             attackCollider.enabled = false;
 

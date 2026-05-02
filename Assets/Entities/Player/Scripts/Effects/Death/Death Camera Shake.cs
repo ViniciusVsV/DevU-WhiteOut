@@ -1,10 +1,10 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace Entities.Player
+namespace Entities.Player.Effects
 {
     [RequireComponent(typeof(CinemachineImpulseSource))]
-    public class CameraShake : MonoBehaviour
+    public class DeathCameraShake : MonoBehaviour
     {
         [SerializeField] private PlayerEffectsData playerEffectsData;
 

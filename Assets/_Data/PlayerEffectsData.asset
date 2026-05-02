@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: PlayerEffectsData
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEffectsData
   cameraShakeStrength: 1
-  imageDuration: 0.2
-  startingAlpha: 0.5
-  delayBetweenImages: 0.1
+  deathKnockbackDistance: 3
+  deathKnockbackDuration: 1
+  deathKnockbackEase: 18
+  wallDetectedOffset: 0.6
+  partialTransitionTexture: {fileID: 2800000, guid: 490e74a4b20b1d741b0d8c2f829e92e5, type: 3}
+  partialTransitionDuration: 1
+  partialTransitionEase: 18
+  partialTransitionProgress: 0.5
+  cameraRecoilStrength: 2
+  gunshotKnockbackForce: 40

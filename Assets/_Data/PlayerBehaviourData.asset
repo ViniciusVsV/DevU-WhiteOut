@@ -20,8 +20,7 @@ MonoBehaviour:
   extraJumps: 1
   coyoteTime: 0.4
   jumpBuffer: 0.2
-  attackDuration: 0.1
-  knockbackForce: 10
+  attackDelay: 0.1
   hostileTags:
   - Enemy
   - Spike
