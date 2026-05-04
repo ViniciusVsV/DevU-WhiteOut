@@ -7,7 +7,7 @@ namespace Entities.Player
     [CreateAssetMenu(fileName = "PlayerEffectsData", menuName = "Scriptable Objects/PlayerEffectsData")]
     public class PlayerEffectsData : ScriptableObject
     {
-        [Header("Death")]
+        [Header("DEATH")]
         [Header("Camera Shake")]
         public float cameraShakeStrength;
 
@@ -23,11 +23,20 @@ namespace Entities.Player
         public Ease partialTransitionEase;
         [Range(-1, 1)] public float partialTransitionProgress;
 
-        [Header("Gunshot")]
+        [Header("Time Slow")]
+        public float slowDuration;
+
+        [Header("GUNSHOT")]
         [Header("Camera Recoil")]
         public float cameraRecoilStrength;
 
         [Header("Knockback")]
         public float gunshotKnockbackForce;
+        public float knockbackDuration;
+
+        [Header("After Images")]
+        public float imageDuration;
+        public float startingAlpha;
+        public float delayBetweenImages;
     }
 }

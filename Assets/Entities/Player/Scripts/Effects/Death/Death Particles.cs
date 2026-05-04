@@ -4,7 +4,6 @@ namespace Entities.Player.Effects
 {
     public class DeathParticles : MonoBehaviour
     {
-        [SerializeField] private PlayerEffectsData playerEffectsData;
         [SerializeField] private ParticleSystem ps;
         [SerializeField] private Transform playerTr;
 

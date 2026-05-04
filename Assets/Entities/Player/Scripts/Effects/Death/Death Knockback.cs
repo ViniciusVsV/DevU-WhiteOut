@@ -27,6 +27,7 @@ namespace Entities.Player.Effects
 
             playerTr.DOMove(endPos, playerEffectsData.deathKnockbackDuration)
             .SetEase(playerEffectsData.deathKnockbackEase)
+            .SetUpdate(true)
             .OnComplete(() =>
             {
                 finished = true;

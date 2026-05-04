@@ -15,13 +15,14 @@ MonoBehaviour:
   transitionShaderMaterial: {fileID: 2100000, guid: 66f0b2a6a94870641816da52ec2ccca9, type: 2}
   enterDuration: 2
   enterEase: 1
-  enterTexture: {fileID: 2800000, guid: 19f64a62a5cdb9042aaf7f7d1cd9da43, type: 3}
+  enterTexture: {fileID: 2800000, guid: db46cda1d07797d4ab61bcdc40670df9, type: 3}
   reRenterDuration: 1
   reRenterEase: 1
   reRenterTexture: {fileID: 2800000, guid: 490e74a4b20b1d741b0d8c2f829e92e5, type: 3}
+  failStartDelay: 1
   failDuration: 1
   failEase: 2
   failTexture: {fileID: 2800000, guid: 490e74a4b20b1d741b0d8c2f829e92e5, type: 3}
-  exitDuration: 0
-  exitEase: 0
-  exitTexture: {fileID: 0}
+  exitDuration: 1
+  exitEase: 1
+  exitTexture: {fileID: 2800000, guid: db46cda1d07797d4ab61bcdc40670df9, type: 3}

@@ -18,6 +18,7 @@ namespace Entities.Player.Effects
 
             transitionShaderMaterial.DOFloat(playerEffectsData.partialTransitionProgress, "_Progress", playerEffectsData.partialTransitionDuration)
             .SetEase(playerEffectsData.partialTransitionEase)
+            .SetUpdate(true)
             .OnComplete(() =>
             {
                 finished = true;

@@ -13,11 +13,11 @@ public class PlayerLevelTransitionsGlue : MonoBehaviour
 
     private void OnEnable()
     {
-        EffectsController.OnPlayerDeath += FailLevel;
+        DeathDetector.OnPlayerDeath += FailLevel;
     }
     private void OnDisable()
     {
-        EffectsController.OnPlayerDeath -= FailLevel;
+        DeathDetector.OnPlayerDeath -= FailLevel;
     }
 
     public void FailLevel()

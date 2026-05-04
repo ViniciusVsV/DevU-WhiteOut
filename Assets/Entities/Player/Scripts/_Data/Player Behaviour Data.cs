@@ -19,9 +19,6 @@ namespace Entities.Player
         public float coyoteTime;
         public float jumpBuffer;
 
-        [Header("Attack")]
-        public float attackDelay;
-
         [Header("Death")]
         public string[] hostileTags;
     }

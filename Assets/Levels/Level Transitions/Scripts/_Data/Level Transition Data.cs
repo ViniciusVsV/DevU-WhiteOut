@@ -19,6 +19,7 @@ namespace Levels.LevelTransitions
         public Texture2D reRenterTexture;
 
         [Header("Level Fail")]
+        public float failStartDelay;
         public float failDuration;
         public Ease failEase;
         public Texture2D failTexture;

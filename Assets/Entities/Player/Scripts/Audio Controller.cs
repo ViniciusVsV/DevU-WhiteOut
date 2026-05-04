@@ -19,9 +19,9 @@ namespace Entities.Player
         {
             OnSoundPlayed?.Invoke(playerAudioData.jumpSFX);
         }
-        public void PlayAttackSFX()
+        public void PlayGunshotSFX()
         {
-            OnSoundPlayed?.Invoke(playerAudioData.attackSFX);
+            OnSoundPlayed?.Invoke(playerAudioData.gunshotSFX);
         }
     }
 }

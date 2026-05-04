@@ -12,7 +12,11 @@ namespace Levels.LevelTransitions
         {
             levelTransitionData.transitionShaderMaterial.SetTexture("_Transition_Texture", levelTransitionData.failTexture);
 
-            levelTransitionData.transitionShaderMaterial.DOFloat(-1f, "_Progress", levelTransitionData.failDuration).SetEase(levelTransitionData.failEase).OnComplete(() =>
+            levelTransitionData.transitionShaderMaterial.DOFloat(-1f, "_Progress", levelTransitionData.failDuration)
+            .SetEase(levelTransitionData.failEase)
+            .SetDelay(levelTransitionData.failStartDelay)
+            .SetUpdate(true)
+            .OnComplete(() =>
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             });

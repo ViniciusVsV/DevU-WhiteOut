@@ -21,5 +21,10 @@ MonoBehaviour:
   partialTransitionDuration: 1
   partialTransitionEase: 18
   partialTransitionProgress: 0.5
+  slowDuration: 1
   cameraRecoilStrength: 2
   gunshotKnockbackForce: 40
+  knockbackDuration: 0.1
+  imageDuration: 0.2
+  startingAlpha: 0.5
+  delayBetweenImages: 0.06

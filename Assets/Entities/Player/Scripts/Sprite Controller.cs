@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Entities.Player
 {
-    [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteController : MonoBehaviour
     {
         private Animator animator;
@@ -26,9 +26,30 @@ namespace Entities.Player
             animator.SetFloat("ySpeed", ySpeed);
         }
 
-        public void TriggerAttackAnimation(bool isActivating)
+        public void TriggerGunshotAnimation()
         {
 
+        }
+
+        public void TriggerDeathAnimation()
+        {
+            animator.SetTrigger("hasDied");
+        }
+
+        public float GetDeathAnimationLength()
+        {
+            foreach (var clip in animator.runtimeAnimatorController.animationClips)
+            {
+                if (clip.name == "Die")
+                    return clip.length;
+            }
+
+            return 0f;
+        }
+
+        public void DisableSprite()
+        {
+            sr.enabled = false;
         }
     }
 }

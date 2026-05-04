@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: efdf78ac5e8a7444c8fa242aac29b6db
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6261539536637058377
+    second: player Atirando (Boneco de neve)-Sheet_0
+  - first:
+      213: -2663080235082034815
+    second: player Atirando (Boneco de neve)-Sheet_1
+  - first:
+      213: 1689577309430574761
+    second: player Atirando (Boneco de neve)-Sheet_2
+  - first:
+      213: -772872158701788567
+    second: player Atirando (Boneco de neve)-Sheet_3
+  - first:
+      213: -898392502778889517
+    second: player Atirando (Boneco de neve)-Sheet_4
+  - first:
+      213: -3635382213215094838
+    second: player Atirando (Boneco de neve)-Sheet_5
+  - first:
+      213: -4584017886137876732
+    second: player Atirando (Boneco de neve)-Sheet_6
+  - first:
+      213: 2214999379476148367
+    second: player Atirando (Boneco de neve)-Sheet_7
+  - first:
+      213: -5904356516607597497
+    second: player Atirando (Boneco de neve)-Sheet_8
+  - first:
+      213: -9193914663302475691
+    second: player Atirando (Boneco de neve)-Sheet_9
+  - first:
+      213: -5277321737699067470
+    second: player Atirando (Boneco de neve)-Sheet_10
+  - first:
+      213: -8865905037352330927
+    second: player Atirando (Boneco de neve)-Sheet_11
+  - first:
+      213: -8882010533267026003
+    second: player Atirando (Boneco de neve)-Sheet_12
+  - first:
+      213: -2500712408495671712
+    second: player Atirando (Boneco de neve)-Sheet_13
+  - first:
+      213: 147088885384850044
+    second: player Atirando (Boneco de neve)-Sheet_14
+  - first:
+      213: 3912222970910678894
+    second: player Atirando (Boneco de neve)-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94dd054980575e650800000000000000
+      internalID: 6261539536637058377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1815293c2a6da0bd0800000000000000
+      internalID: -2663080235082034815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae6b257c95927710800000000000000
+      internalID: 1689577309430574761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9626ac3ddd43645f0800000000000000
+      internalID: -772872158701788567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da7df257c44883f0800000000000000
+      internalID: -898392502778889517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac77a8e53278c8dc0800000000000000
+      internalID: -3635382213215094838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 3
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ff6bc050c4260c0800000000000000
+      internalID: -4584017886137876732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 3
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80f26733324dbe10800000000000000
+      internalID: 2214999379476148367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 10
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7446750e7038f0ea0800000000000000
+      internalID: -5904356516607597497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550d99e3357a86080800000000000000
+      internalID: -9193914663302475691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9fffa07df23c6b0800000000000000
+      internalID: -5277321737699067470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1599444975af5f480800000000000000
+      internalID: -8865905037352330927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf47599a72ccb480800000000000000
+      internalID: -8882010533267026003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0663436505fab4dd0800000000000000
+      internalID: -2500712408495671712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7aa5cbdf809a0200800000000000000
+      internalID: 147088885384850044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player Atirando (Boneco de neve)-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 3
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f114f60120b4630800000000000000
+      internalID: 3912222970910678894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player Atirando (Boneco de neve)-Sheet_0: 6261539536637058377
+      player Atirando (Boneco de neve)-Sheet_1: -2663080235082034815
+      player Atirando (Boneco de neve)-Sheet_10: -5277321737699067470
+      player Atirando (Boneco de neve)-Sheet_11: -8865905037352330927
+      player Atirando (Boneco de neve)-Sheet_12: -8882010533267026003
+      player Atirando (Boneco de neve)-Sheet_13: -2500712408495671712
+      player Atirando (Boneco de neve)-Sheet_14: 147088885384850044
+      player Atirando (Boneco de neve)-Sheet_15: 3912222970910678894
+      player Atirando (Boneco de neve)-Sheet_2: 1689577309430574761
+      player Atirando (Boneco de neve)-Sheet_3: -772872158701788567
+      player Atirando (Boneco de neve)-Sheet_4: -898392502778889517
+      player Atirando (Boneco de neve)-Sheet_5: -3635382213215094838
+      player Atirando (Boneco de neve)-Sheet_6: -4584017886137876732
+      player Atirando (Boneco de neve)-Sheet_7: 2214999379476148367
+      player Atirando (Boneco de neve)-Sheet_8: -5904356516607597497
+      player Atirando (Boneco de neve)-Sheet_9: -9193914663302475691
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

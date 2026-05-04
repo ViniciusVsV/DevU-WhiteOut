@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerAudioData
   walkSFXs: []
   jumpSFX: {fileID: 0}
-  attackSFX: {fileID: 0}
+  gunshotSFX: {fileID: 8300000, guid: d63c2839914e628468b8d33850e9b7ff, type: 3}

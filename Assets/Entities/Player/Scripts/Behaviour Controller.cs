@@ -10,9 +10,10 @@ namespace Entities.Player
         [SerializeField] private PlayerBehaviourData playerBehaviourData;
 
         [Header("Player Scripts")]
-        [SerializeField] private SpriteController spriteController;
-        [SerializeField] private CapsuleCollider2D attackCollider;
         [SerializeField] private EffectsController effectsController;
+        [SerializeField] private CapsuleCollider2D attackCollider;
+        [SerializeField] private SpriteController spriteController;
+        [SerializeField] private ProjectileSpawner projectileSpawner;
 
         private Rigidbody2D rb;
 
@@ -52,6 +53,8 @@ namespace Entities.Player
             Jump();
 
             rb.gravityScale = rb.linearVelocityY >= 0 ? playerBehaviourData.baseGravity : playerBehaviourData.fallGravity;
+
+            effectsController.PlayWalkEffects();
         }
 
         private void FixedUpdate()
@@ -87,7 +90,12 @@ namespace Entities.Player
                 jumpBufferTimer = 0;
 
                 if (!isGrounded)
-                    remainingJumps--;
+                {
+                    if (remainingJumps > 0)
+                        remainingJumps--;
+                    else
+                        return;
+                }
 
                 rb.linearVelocityY = 0;
                 rb.AddForce(playerBehaviourData.jumpForce * Vector2.up, ForceMode2D.Impulse);
@@ -107,13 +115,10 @@ namespace Entities.Player
             canAttack = false;
             canMove = false;
 
-            attackCollider.enabled = true;
-
+            projectileSpawner.SpawnProjectile(Vector2.one * lastMoveDirection);
             effectsController.PlayGunshotEffects(lastMoveDirection);
 
-            yield return new WaitForSeconds(playerBehaviourData.attackDelay);
-
-            attackCollider.enabled = false;
+            yield return new WaitUntil(() => effectsController.gunshotEffectsFinished);
 
             canMove = true;
             canAttack = true;

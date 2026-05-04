@@ -9,6 +9,7 @@ TagManager:
   - Border
   - PlayerWeapon
   - Spike
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
@@ -18,11 +19,11 @@ TagManager:
   - UI
   - Ground
   - Paint
-  - EnemyWeapon
-  - PlayerWeapon
+  - 
+  - 
   - Enemy
-  - 
-  - 
+  - EnemyHitbox
+  - EnemyWeapon
   - 
   - 
   - 
