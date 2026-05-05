@@ -16,11 +16,10 @@ MonoBehaviour:
   baseGravity: 5
   fallGravity: 7
   jumpForce: 22
-  jumpCutMultiplier: 0.1
+  jumpCutMultiplier: 0.3
   extraJumps: 1
   coyoteTime: 0.4
   jumpBuffer: 0.2
-  attackDelay: 0.1
   hostileTags:
   - Enemy
   - Spike
