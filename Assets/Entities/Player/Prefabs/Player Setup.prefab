@@ -1255,6 +1255,7 @@ MonoBehaviour:
   movementDisabled: 0
   jumpDisabled: 0
   attackDisabled: 0
+  pausedDisabled: 0
 --- !u!114 &7396534720093866138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,6 +1393,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 22e4bd66-5390-4877-8b6b-8c756ab0d22e
     m_ActionName: 'Player/Dash[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8081911169069041406}
+        m_TargetAssemblyTypeName: Entities.Player.InputHandler, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f19fbecb-690f-4a79-8524-94cc24455e5a
+    m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 

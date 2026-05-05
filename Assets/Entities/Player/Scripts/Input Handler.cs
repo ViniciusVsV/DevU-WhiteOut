@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,9 @@ namespace Entities.Player
         public bool movementDisabled;
         public bool jumpDisabled;
         public bool attackDisabled;
+        public bool pausedDisabled;
+
+        public static event Action OnPausePressed;
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -52,6 +56,25 @@ namespace Entities.Player
 
             if (context.performed)
                 StartCoroutine(behaviourController.Attack());
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                if (pausedDisabled)
+                {
+                    inputsDisabled = false;
+                    pausedDisabled = false;
+                }
+                else
+                {
+                    inputsDisabled = true;
+                    pausedDisabled = true;
+                }
+
+                OnPausePressed?.Invoke();
+            }
         }
     }
 }
