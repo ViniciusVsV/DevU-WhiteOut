@@ -1,6 +1,5 @@
 using MenuSystem.Sections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MenuSystem
 {
@@ -8,11 +7,6 @@ namespace MenuSystem
     {
         [SerializeField] private ConfigSection configSection;
         [SerializeField] private ControlsSection controlsSection;
-
-        public void StartGame()
-        {
-            SceneManager.LoadScene("Game");
-        }
 
         public void OpenConfigSection()
         {

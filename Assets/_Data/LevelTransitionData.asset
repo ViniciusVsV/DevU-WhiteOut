@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: LevelTransitionData
   m_EditorClassIdentifier: Assembly-CSharp::Levels.LevelTransitions.LevelTransitionData
   transitionShaderMaterial: {fileID: 2100000, guid: 66f0b2a6a94870641816da52ec2ccca9, type: 2}
+  sceneNames:
+  - Game
+  - Level 1
   enterDuration: 2
   enterEase: 1
   enterTexture: {fileID: 2800000, guid: db46cda1d07797d4ab61bcdc40670df9, type: 3}
