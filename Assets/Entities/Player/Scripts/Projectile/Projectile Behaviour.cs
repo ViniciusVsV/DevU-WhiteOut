@@ -19,6 +19,8 @@ namespace Entities.Player
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+
+            Destroy(gameObject, 10);
         }
 
         private void FixedUpdate()
@@ -26,9 +28,11 @@ namespace Entities.Player
             if (hasCollided)
                 return;
 
-            rb.linearVelocity = transform.right * playerProjectileData.speed;
 
-            Vector2 direction = transform.right;
+
+            rb.linearVelocity = transform.up * playerProjectileData.speed;
+
+            Vector2 direction = transform.up;
             float distance = playerProjectileData.speed * Time.fixedDeltaTime;
 
             RaycastHit2D hit = Physics2D.Raycast(rb.position, direction, distance, collisionLayers);
@@ -48,10 +52,19 @@ namespace Entities.Player
                 hitParticles.transform.position = hit.point;
                 hitParticles.Play();
 
+                trailParticles.transform.SetParent(null);
+                trailParticles.transform.localScale = Vector3.one;
+
+                movementParticles.transform.SetParent(null);
+                movementParticles.transform.localScale = Vector3.one;
+
+                hitParticles.transform.SetParent(null);
+                hitParticles.transform.localScale = Vector3.one;
+
                 if (hit.collider.gameObject.TryGetComponent<IKillable>(out var killable))
                     killable.Die(transform.position);
 
-                Destroy(gameObject, 3);
+                Destroy(gameObject);
             }
         }
     }

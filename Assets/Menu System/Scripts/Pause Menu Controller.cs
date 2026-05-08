@@ -10,7 +10,6 @@ namespace MenuSystem
         [SerializeField] private ControlsSection controlsSection;
 
         private bool isPaused;
-        public bool canPause = true;
 
         public void PauseGame()
         {
@@ -26,9 +25,6 @@ namespace MenuSystem
 
                 return;
             }
-
-            if (!canPause)
-                return;
 
             isPaused = true;
 

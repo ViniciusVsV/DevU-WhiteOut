@@ -7,10 +7,17 @@ namespace Entities.Player
 {
     public class EffectsController : MonoBehaviour
     {
+        [Header("Player Objects")]
         [SerializeField] private Rigidbody2D playerRb;
         [SerializeField] private SpriteRenderer playerSr;
+
+        [Header("Player Scripts")]
         [SerializeField] private SpriteController spriteController;
         [SerializeField] private AudioController audioController;
+        [SerializeField] private InputHandler inputHandler;
+
+        [Header("Generic Effects")]
+        [SerializeField] private ControllerRumble controllerRumble;
 
         [Header("Gunshot Effects")]
         [SerializeField] private GunshotCameraRecoil gunshotCameraRecoil;
@@ -38,22 +45,27 @@ namespace Entities.Player
 
         }
 
-        public void PlayGunshotEffects(int shotDirection)
+        public void PlayGunshotEffects(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
         {
             spriteController.TriggerGunshotAnimation();
             audioController.PlayGunshotSFX();
 
             gunshotEffectsFinished = false;
 
-            StartCoroutine(GunshotEffectsRoutine(shotDirection));
+            StartCoroutine(GunshotEffectsRoutine(shotDirection, projectileTr, projectileSr));
         }
-        private IEnumerator GunshotEffectsRoutine(int shotDirection)
+        private IEnumerator GunshotEffectsRoutine(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
         {
             //Ativa After Images
             afterImagesManager.StartAfterImages(playerRb.transform, playerSr);
+            afterImagesManager.StartAfterImages(projectileTr, projectileSr);
 
             //Aplica recoil
             gunshotCameraRecoil.ApplyEffect(-shotDirection);
+
+            //Aplica tremor do controle
+            if (inputHandler.isOnController)
+                controllerRumble.ApplyEffect(false);
 
             //Aplica knockback
             gunshotKnockback.ApplyEffect(-shotDirection);
@@ -81,6 +93,13 @@ namespace Entities.Player
         {
             //Treme a câmera
             deathCameraShake.ApplyEffect();
+
+            //Aplica tremor do controle
+            if (inputHandler.isOnController)
+                controllerRumble.ApplyEffect(true);
+
+            //Faz o animator ser unscaledTime
+            spriteController.SetUnscaledTime();
 
             //Ativa time slow
             deathTimeSlow.ApplyEffect();

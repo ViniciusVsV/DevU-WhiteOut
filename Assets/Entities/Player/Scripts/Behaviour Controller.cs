@@ -115,8 +115,8 @@ namespace Entities.Player
             canAttack = false;
             canMove = false;
 
-            projectileSpawner.SpawnProjectile(Vector2.one * lastMoveDirection);
-            effectsController.PlayGunshotEffects(lastMoveDirection);
+            var (projectileTr, projectileSr) = projectileSpawner.SpawnProjectile(Vector2.one * lastMoveDirection);
+            effectsController.PlayGunshotEffects(lastMoveDirection, projectileTr, projectileSr);
 
             yield return new WaitUntil(() => effectsController.gunshotEffectsFinished);
 

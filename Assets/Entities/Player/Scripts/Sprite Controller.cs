@@ -35,7 +35,6 @@ namespace Entities.Player
         {
             animator.SetTrigger("hasDied");
         }
-
         public float GetDeathAnimationLength()
         {
             foreach (var clip in animator.runtimeAnimatorController.animationClips)
@@ -51,5 +50,12 @@ namespace Entities.Player
         {
             sr.enabled = false;
         }
+
+        public void SetUnscaledTime()
+        {
+            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        }
+
+        public SpriteRenderer GetSpriteRenderer() { return sr; }
     }
 }

@@ -247,6 +247,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 581810230661160104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &438614094559293519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3144579013162657159}
+  - component: {fileID: 1386690379534656621}
+  m_Layer: 0
+  m_Name: Controller Rumble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3144579013162657159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438614094559293519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4030683014554800383}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386690379534656621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438614094559293519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cddee3142b1474495882a6c93eb719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Player.Effects.ControllerRumble
+  playerEffectsData: {fileID: 11400000, guid: 01a5a4f3db6b40a4bac85368bf2d023a, type: 2}
 --- !u!1 &507278467812235702
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +821,7 @@ MonoBehaviour:
   groundCheckBoxSize: {x: 0.9, y: 0.1}
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   canMove: 0
   canJump: 0
   canAttack: 0
@@ -877,7 +922,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2744aa53e50d84e4d9b7b12e04b0d246, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 2
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1171,6 +1216,7 @@ Transform:
   - {fileID: 1720825825347621077}
   - {fileID: 7342848672496060189}
   - {fileID: 4922657525961284979}
+  - {fileID: 3144579013162657159}
   m_Father: {fileID: 1998061051895341009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5295999676728434061
@@ -1255,7 +1301,9 @@ MonoBehaviour:
   movementDisabled: 0
   jumpDisabled: 0
   attackDisabled: 0
-  pausedDisabled: 0
+  pauseDisabled: 0
+  isPaused: 0
+  isOnController: 0
 --- !u!114 &7396534720093866138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 4dc06e3ae1605ea46b9d1330ed642841, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1286,6 +1334,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8081911169069041406}
         m_TargetAssemblyTypeName: Player.InputHandler, Assembly-CSharp
         m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8081911169069041406}
+        m_TargetAssemblyTypeName: Entities.Player.InputHandler, Assembly-CSharp
+        m_MethodName: CheckForController
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1315,6 +1375,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8081911169069041406}
+        m_TargetAssemblyTypeName: Entities.Player.InputHandler, Assembly-CSharp
+        m_MethodName: CheckForController
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
@@ -1330,6 +1402,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8081911169069041406}
         m_TargetAssemblyTypeName: Player.InputHandler, Assembly-CSharp
         m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8081911169069041406}
+        m_TargetAssemblyTypeName: Entities.Player.InputHandler, Assembly-CSharp
+        m_MethodName: CheckForController
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1407,11 +1491,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8081911169069041406}
+        m_TargetAssemblyTypeName: Entities.Player.InputHandler, Assembly-CSharp
+        m_MethodName: CheckForController
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f19fbecb-690f-4a79-8524-94cc24455e5a
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &5812512246483356645
@@ -1715,6 +1811,8 @@ MonoBehaviour:
   playerSr: {fileID: 1433456136961249887}
   spriteController: {fileID: 7478858406642721982}
   audioController: {fileID: 8895888117351584611}
+  inputHandler: {fileID: 8081911169069041406}
+  controllerRumble: {fileID: 1386690379534656621}
   gunshotCameraRecoil: {fileID: 8735040747727084444}
   gunshotKnockback: {fileID: 707252035528419712}
   afterImagesManager: {fileID: 7799339089411681445}

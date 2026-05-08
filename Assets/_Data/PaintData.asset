@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: PaintData
   m_EditorClassIdentifier: Assembly-CSharp::Entities.PaintData
   paintPrefab: {fileID: 960892018629505946, guid: 96ecd0a343ddf4442b6d754314841e65, type: 3}
-  paintLayer:
-    serializedVersion: 2
-    m_Bits: 128
   paintHolderTag: PaintHolder
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
   paintSprites:
   - {fileID: 6859001573892978866, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
   - {fileID: -8196366484226070513, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
   - {fileID: 6861898870870037381, guid: b27f504c630cbc241bf11462c0f4a7d2, type: 3}
+  paintLayer:
+    serializedVersion: 2
+    m_Bits: 128
   paintCheckRadius: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   groundCheckRadius: 0.1
+  movingPlatformTag: MovingPlatform

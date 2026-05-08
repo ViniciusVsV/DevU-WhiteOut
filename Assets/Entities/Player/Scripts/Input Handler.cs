@@ -15,7 +15,9 @@ namespace Entities.Player
         public bool movementDisabled;
         public bool jumpDisabled;
         public bool attackDisabled;
-        public bool pausedDisabled;
+        public bool pauseDisabled;
+        public bool isPaused;
+        public bool isOnController;
 
         public static event Action OnPausePressed;
 
@@ -27,15 +29,17 @@ namespace Entities.Player
                 return;
             }
 
-            if (context.performed)
-            {
-                Vector2 moveDirection = context.ReadValue<Vector2>();
-                moveDirection = moveDirection.normalized;
 
-                behaviourController.Move((int)moveDirection.x);
-            }
-            else
+            Vector2 moveDirection = context.ReadValue<Vector2>();
+            moveDirection = moveDirection.normalized;
+
+            if (Mathf.Abs(moveDirection.x) < 0.2f)
+            {
                 behaviourController.Move(0);
+                return;
+            }
+
+            behaviourController.Move((int)Mathf.Sign(moveDirection.x));
         }
 
         public void OnJump(InputAction.CallbackContext context)
@@ -60,21 +64,32 @@ namespace Entities.Player
 
         public void OnPause(InputAction.CallbackContext context)
         {
+            if (pauseDisabled)
+                return;
+
             if (context.performed)
             {
-                if (pausedDisabled)
+                if (isPaused)
                 {
                     inputsDisabled = false;
-                    pausedDisabled = false;
+                    isPaused = false;
                 }
                 else
                 {
                     inputsDisabled = true;
-                    pausedDisabled = true;
+                    isPaused = true;
                 }
 
                 OnPausePressed?.Invoke();
             }
+        }
+
+        public void CheckForController(InputAction.CallbackContext context)
+        {
+            if (context.control.device is Gamepad)
+                isOnController = true;
+            else
+                isOnController = false;
         }
     }
 }

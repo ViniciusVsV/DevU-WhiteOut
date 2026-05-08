@@ -29,6 +29,7 @@ namespace Entities.Player
                 col.enabled = false;
 
                 inputHandler.inputsDisabled = true;
+                inputHandler.pauseDisabled = true;
 
                 Vector3 closestPoint = collision.ClosestPoint(transform.position);
                 Vector3 colDirection = (closestPoint - transform.position).normalized;

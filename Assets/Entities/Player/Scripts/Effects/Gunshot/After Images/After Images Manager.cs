@@ -48,14 +48,18 @@ namespace Entities.Player.Effects
         {
             while (true)
             {
+                if (entity == null)
+                {
+                    StopAfterImages(entity);
+                    yield return null;
+                }
+
                 AfterImage afterImage = pool.Count > 0 ? pool.Dequeue() : Instantiate(afterImagePrefab, transform);
 
                 afterImage.Initialize(this);
 
-                // Flipa a imagem
-                Vector3 newScale = afterImage.transform.localScale;
-                newScale.x = Mathf.Abs(newScale.x) * Mathf.Sign(entity.localScale.x);
-                afterImage.transform.localScale = newScale;
+                //Aplica a mesma escala da entidade
+                afterImage.transform.localScale = entity.lossyScale;
 
                 //Aplica a rotação
                 afterImage.transform.rotation = entity.rotation;
