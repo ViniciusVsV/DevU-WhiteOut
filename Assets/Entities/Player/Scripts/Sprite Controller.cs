@@ -20,15 +20,20 @@ namespace Entities.Player
             transform.localScale *= new Vector2(-1, 1);
         }
 
-        public void SetMovementAnimations(float xSpeed, float ySpeed)
+        public void SetMovementValues(float xSpeed, float ySpeed)
         {
             animator.SetFloat("xSpeed", xSpeed);
             animator.SetFloat("ySpeed", ySpeed);
         }
 
+        public void SetJumpBoolean(bool isJumping)
+        {
+            animator.SetBool("isJumping", isJumping);
+        }
+
         public void TriggerGunshotAnimation()
         {
-
+            animator.SetTrigger("hasShot");
         }
 
         public void TriggerDeathAnimation()

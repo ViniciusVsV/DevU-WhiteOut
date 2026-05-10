@@ -48,5 +48,8 @@ namespace Entities.Player
         public float gunshotLowFrequency;
         public float gunshotHighFrequency;
         public float gunshotRumbleDuration;
+
+        [Header("MOVEMENT")]
+        public float runParticlesCooldown;
     }
 }

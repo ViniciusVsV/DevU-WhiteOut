@@ -16,3 +16,8 @@ MonoBehaviour:
   borderTag: Border
   minWaitDuration: 1
   maxWaitDuration: 2.5
+  variantAnimators:
+  - {fileID: 22100000, guid: 429c74647fbec704ba431221ef6d726b, type: 2}
+  - {fileID: 22100000, guid: 3d3458968c043b045b5627ffa078daaa, type: 2}
+  - {fileID: 22100000, guid: 33c4709bad0d2f240b1795a1d69b4ed4, type: 2}
+  baseDeathClip: {fileID: 7400000, guid: 4677538754890594db13b9a66746014c, type: 2}

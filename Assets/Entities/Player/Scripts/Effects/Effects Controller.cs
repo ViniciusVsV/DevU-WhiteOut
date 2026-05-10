@@ -18,6 +18,7 @@ namespace Entities.Player
 
         [Header("Generic Effects")]
         [SerializeField] private ControllerRumble controllerRumble;
+        [SerializeField] private MovementParticles movementParticles;
 
         [Header("Gunshot Effects")]
         [SerializeField] private GunshotCameraRecoil gunshotCameraRecoil;
@@ -34,14 +35,20 @@ namespace Entities.Player
         public bool gunshotEffectsFinished;
         public bool deathEffectsFinished;
 
-        public void PlayWalkEffects()
+        public void PlayWalkEffects(bool isGrounded)
         {
-            spriteController.SetMovementAnimations(Mathf.Abs(playerRb.linearVelocityX), playerRb.linearVelocityY);
-
+            if (isGrounded && Mathf.Abs(playerRb.linearVelocityX) > 0.01f)
+                movementParticles.ToggleRunparticles(true);
+            else
+                movementParticles.ToggleRunparticles(false);
         }
 
         public void PlayJumpEffects()
         {
+            //Dá play nas partículas de pulo
+            movementParticles.PlayJumpParticles();
+
+            //Chama o efeito sonoro de pular
 
         }
 
@@ -56,6 +63,9 @@ namespace Entities.Player
         }
         private IEnumerator GunshotEffectsRoutine(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
         {
+            //Espera um frame para a animação de tiro começar
+            yield return new WaitForEndOfFrame();
+
             //Ativa After Images
             afterImagesManager.StartAfterImages(playerRb.transform, playerSr);
             afterImagesManager.StartAfterImages(projectileTr, projectileSr);

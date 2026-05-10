@@ -34,3 +34,4 @@ MonoBehaviour:
   gunshotLowFrequency: 1
   gunshotHighFrequency: 1
   gunshotRumbleDuration: 0.2
+  runParticlesCooldown: 0.07

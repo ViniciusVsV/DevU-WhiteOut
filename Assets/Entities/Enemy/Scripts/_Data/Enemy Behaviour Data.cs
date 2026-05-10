@@ -12,5 +12,14 @@ namespace Entities.Enemy
         public string borderTag;
         public float minWaitDuration;
         public float maxWaitDuration;
+
+        [Header("Sprite Variants")]
+        public AnimatorOverrideController[] variantAnimators;
+        public AnimationClip baseDeathClip;
+
+        public AnimatorOverrideController GetRandomSpriteVariant()
+        {
+            return variantAnimators[Random.Range(0, variantAnimators.Length)];
+        }
     }
 }
