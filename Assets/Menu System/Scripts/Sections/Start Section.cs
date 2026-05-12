@@ -1,18 +1,16 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MenuSystem.Sections
 {
     public class StartSection : MonoBehaviour
     {
-        [SerializeField] private string firstLevelName;
-
+        public static event Action OnNewGameStarted;
         public static event Action OnGameContinued;
 
         public void StartNewGame()
         {
-            SceneManager.LoadScene(firstLevelName);
+            OnNewGameStarted?.Invoke();
         }
 
         public void ContinueGame()

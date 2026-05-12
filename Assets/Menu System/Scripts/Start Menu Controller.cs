@@ -6,7 +6,6 @@ namespace MenuSystem
     public class StartMenuController : MonoBehaviour
     {
         [SerializeField] private ConfigSection configSection;
-        [SerializeField] private ControlsSection controlsSection;
 
         public void OpenConfigSection()
         {
@@ -15,15 +14,6 @@ namespace MenuSystem
         public void CloseConfigSection()
         {
             configSection.Deactivate();
-        }
-
-        public void OpenControlsSection()
-        {
-            controlsSection.Activate();
-        }
-        public void CloseControlsSection()
-        {
-            controlsSection.Deactivate();
         }
     }
 }

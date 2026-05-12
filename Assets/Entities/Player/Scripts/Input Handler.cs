@@ -18,8 +18,18 @@ namespace Entities.Player
         public bool pauseDisabled;
         public bool isPaused;
         public bool isOnController;
+        public bool isTesting;
 
         public static event Action OnPausePressed;
+
+        private void Awake()
+        {
+            if (!isTesting)
+            {
+                inputsDisabled = true;
+                pauseDisabled = true;
+            }
+        }
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -28,7 +38,6 @@ namespace Entities.Player
                 behaviourController.Move(0);
                 return;
             }
-
 
             Vector2 moveDirection = context.ReadValue<Vector2>();
             moveDirection = moveDirection.normalized;
@@ -90,6 +99,22 @@ namespace Entities.Player
                 isOnController = true;
             else
                 isOnController = false;
+        }
+
+        public void EnableInputs()
+        {
+            inputsDisabled = false;
+            pauseDisabled = false;
+        }
+        public void DisableInputs()
+        {
+            if (inputsDisabled)
+                return;
+
+            inputsDisabled = true;
+            pauseDisabled = true;
+
+            behaviourController.Move(0);
         }
     }
 }

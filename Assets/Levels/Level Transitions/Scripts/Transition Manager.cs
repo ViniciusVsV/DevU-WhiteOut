@@ -37,5 +37,10 @@ namespace Levels.LevelTransitions
         {
             levelFail.FailLevel();
         }
+
+        public void ExitLevel()
+        {
+            levelExit.ExitLevel();
+        }
     }
 }

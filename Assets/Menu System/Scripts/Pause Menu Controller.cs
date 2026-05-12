@@ -7,7 +7,6 @@ namespace MenuSystem
     {
         [SerializeField] private PauseSection pauseSection;
         [SerializeField] private ConfigSection configSection;
-        [SerializeField] private ControlsSection controlsSection;
 
         private bool isPaused;
 
@@ -17,7 +16,6 @@ namespace MenuSystem
             {
                 pauseSection.Deactivate();
                 configSection.Deactivate();
-                controlsSection.Deactivate();
 
                 Time.timeScale = 1f;
 
@@ -39,15 +37,6 @@ namespace MenuSystem
         public void CloseConfigSection()
         {
             configSection.Deactivate();
-        }
-
-        public void OpenControlsSection()
-        {
-            controlsSection.Activate();
-        }
-        public void CloseControlsSection()
-        {
-            controlsSection.Deactivate();
         }
     }
 }

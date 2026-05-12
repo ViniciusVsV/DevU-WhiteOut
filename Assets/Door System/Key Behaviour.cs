@@ -6,10 +6,10 @@ namespace DoorSystem
     [RequireComponent(typeof(SpriteRenderer))]
     public class KeyBehaviour : MonoBehaviour
     {
-        public bool hasBeenCollected;
-
         private CircleCollider2D col;
         private SpriteRenderer sr;
+
+        public bool hasBeenCollected;
 
         private void Awake()
         {

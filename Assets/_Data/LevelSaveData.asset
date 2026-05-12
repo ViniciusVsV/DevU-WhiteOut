@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: LevelSaveData
   m_EditorClassIdentifier: Assembly-CSharp::Levels.LevelSaveSystem.LevelSaveData
   ignoredScenes:
-  - Start Menu
+  - Level 0
+  - Level Final

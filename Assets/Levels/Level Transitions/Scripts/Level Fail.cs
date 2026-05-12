@@ -7,9 +7,12 @@ namespace Levels.LevelTransitions
     public class LevelFail : MonoBehaviour
     {
         [SerializeField] private LevelTransitionData levelTransitionData;
+        [SerializeField] private GameObject canvasObject;
 
         public void FailLevel()
         {
+            canvasObject.SetActive(true);
+
             levelTransitionData.transitionShaderMaterial.SetTexture("_Transition_Texture", levelTransitionData.failTexture);
 
             levelTransitionData.transitionShaderMaterial.DOFloat(-1f, "_Progress", levelTransitionData.failDuration)

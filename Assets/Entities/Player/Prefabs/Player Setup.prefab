@@ -425,6 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7065262777974911066}
+  - component: {fileID: 2171369702567992190}
   - component: {fileID: 217339180699151887}
   - component: {fileID: 5875064390881065124}
   - component: {fileID: 109074429278501940}
@@ -451,6 +452,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1998061051895341009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2171369702567992190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032450973685842154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27e5765568efb049b054e9bdd11958d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Player.CameraController
+  playerCameraConfiner: {fileID: 143247326507443244}
 --- !u!114 &217339180699151887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,10 +1390,11 @@ MonoBehaviour:
   inputsDisabled: 0
   movementDisabled: 0
   jumpDisabled: 0
-  attackDisabled: 0
+  attackDisabled: 1
   pauseDisabled: 0
   isPaused: 0
   isOnController: 0
+  isTesting: 0
 --- !u!114 &7396534720093866138
 MonoBehaviour:
   m_ObjectHideFlags: 0
