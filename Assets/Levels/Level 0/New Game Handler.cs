@@ -26,7 +26,7 @@ namespace Levels.Level0
         public void StartNewGame()
         {
             //Desativa os botões de jogar
-            buttonAnimations.FadeOutButtons();
+            buttonAnimations.FadeOutButtons(false);
 
             wallObject.SetActive(false);
 

@@ -7,7 +7,7 @@ namespace Levels.LevelSaveSystem
     {
         public void LoadLevel()
         {
-            string levelName = PlayerPrefs.GetString("SavedLevel", "Level 1");
+            string levelName = PlayerPrefs.GetString("SavedLevel");
 
             SceneManager.LoadScene(levelName);
         }

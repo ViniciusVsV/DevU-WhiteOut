@@ -20,6 +20,6 @@ MonoBehaviour:
   buttonFadeOutDuration: 1
   buttonFadeOutEase: 0
   moveDelay: 0.1
-  moveDistance: 100
-  moveDuration: 1
-  moveEase: 18
+  moveDistance: 80
+  moveDuration: 0.5
+  moveEase: 6

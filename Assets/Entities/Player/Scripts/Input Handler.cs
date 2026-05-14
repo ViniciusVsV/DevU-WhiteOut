@@ -96,9 +96,15 @@ namespace Entities.Player
         public void CheckForController(InputAction.CallbackContext context)
         {
             if (context.control.device is Gamepad)
+            {
                 isOnController = true;
+                Cursor.visible = false;
+            }
             else
+            {
                 isOnController = false;
+                Cursor.visible = true;
+            }
         }
 
         public void EnableInputs()
