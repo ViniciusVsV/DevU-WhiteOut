@@ -7,8 +7,10 @@ namespace Entities.Enemy
     public class EffectsController : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D enemyRb;
-        [SerializeField] private SpriteRenderer enemySr;
         [SerializeField] private Collider2D enemyWeaponCol;
+
+        [Header("Enemy Scripts")]
+        [SerializeField] private SpriteController spriteController;
 
         [Header("Death Effects")]
         [SerializeField] private DeathParticles deathParticles;
@@ -17,19 +19,24 @@ namespace Entities.Enemy
 
         public void PlayDeathEffects(Vector2 colDirection)
         {
-            enemyRb.simulated = false;
-            enemySr.enabled = false;
-            enemyWeaponCol.enabled = false;
+            spriteController.TriggerDeathAnimation();
 
             deathEffectsFinished = false;
 
+            enemyRb.simulated = false;
+            enemyWeaponCol.enabled = false;
+
+            StartCoroutine(DeathEffectsRoutine(colDirection));
+        }
+        private IEnumerator DeathEffectsRoutine(Vector2 colDirection)
+        {
+            yield return new WaitForEndOfFrame();
+
             deathParticles.ApplyEffect(colDirection);
 
-            StartCoroutine(DeathEffectsRoutine());
-        }
-        private IEnumerator DeathEffectsRoutine()
-        {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(spriteController.GetDeathAnimationLength());
+
+            spriteController.DisableSprite();
 
             deathEffectsFinished = true;
         }

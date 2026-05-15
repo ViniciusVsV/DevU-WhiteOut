@@ -10,6 +10,8 @@ TagManager:
   - PlayerWeapon
   - Spike
   - PlayerProjectile
+  - MovingPlatform
+  - CameraConfiner
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - UI
   - Ground
   - Paint
-  - 
+  - MovingPlatform
   - 
   - Enemy
   - EnemyHitbox

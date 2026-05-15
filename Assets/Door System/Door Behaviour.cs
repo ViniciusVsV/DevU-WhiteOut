@@ -1,18 +1,31 @@
+using System;
 using UnityEngine;
 
 namespace DoorSystem
 {
+    [RequireComponent(typeof(Collider2D))]
     public class DoorBehaviour : MonoBehaviour
     {
         [SerializeField] private KeyBehaviour key;
-        [SerializeField] private Collider2D doorCollider;
+        private Collider2D col;
+
+        public static event Action OnDoorEntered;
+
+        private void Awake()
+        {
+            col = GetComponent<Collider2D>();
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
             {
                 if (key.hasBeenCollected)
-                    doorCollider.enabled = false;
+                {
+                    col.enabled = false;
+
+                    OnDoorEntered?.Invoke();
+                }
             }
         }
     }

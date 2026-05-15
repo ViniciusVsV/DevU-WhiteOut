@@ -26,6 +26,11 @@ namespace Entities.Player
         [Header("Time Slow")]
         public float slowDuration;
 
+        [Header("Controller Rumble")]
+        public float deathLowFrequency;
+        public float deathHighFrequency;
+        public float deathRumbleDuration;
+
         [Header("GUNSHOT")]
         [Header("Camera Recoil")]
         public float cameraRecoilStrength;
@@ -38,5 +43,13 @@ namespace Entities.Player
         public float imageDuration;
         public float startingAlpha;
         public float delayBetweenImages;
+
+        [Header("Controller Rumble")]
+        public float gunshotLowFrequency;
+        public float gunshotHighFrequency;
+        public float gunshotRumbleDuration;
+
+        [Header("MOVEMENT")]
+        public float runParticlesCooldown;
     }
 }

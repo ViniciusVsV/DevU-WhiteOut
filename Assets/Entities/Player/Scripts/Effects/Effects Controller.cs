@@ -7,10 +7,18 @@ namespace Entities.Player
 {
     public class EffectsController : MonoBehaviour
     {
+        [Header("Player Objects")]
         [SerializeField] private Rigidbody2D playerRb;
         [SerializeField] private SpriteRenderer playerSr;
+
+        [Header("Player Scripts")]
         [SerializeField] private SpriteController spriteController;
         [SerializeField] private AudioController audioController;
+        [SerializeField] private InputHandler inputHandler;
+
+        [Header("Generic Effects")]
+        [SerializeField] private ControllerRumble controllerRumble;
+        [SerializeField] private MovementParticles movementParticles;
 
         [Header("Gunshot Effects")]
         [SerializeField] private GunshotCameraRecoil gunshotCameraRecoil;
@@ -27,33 +35,47 @@ namespace Entities.Player
         public bool gunshotEffectsFinished;
         public bool deathEffectsFinished;
 
-        public void PlayWalkEffects()
+        public void PlayWalkEffects(bool isGrounded)
         {
-            spriteController.SetMovementAnimations(Mathf.Abs(playerRb.linearVelocityX), playerRb.linearVelocityY);
-
+            if (isGrounded && Mathf.Abs(playerRb.linearVelocityX) > 0.01f)
+                movementParticles.ToggleRunparticles(true);
+            else
+                movementParticles.ToggleRunparticles(false);
         }
 
         public void PlayJumpEffects()
         {
+            //Dá play nas partículas de pulo
+            movementParticles.PlayJumpParticles();
+
+            //Chama o efeito sonoro de pular
 
         }
 
-        public void PlayGunshotEffects(int shotDirection)
+        public void PlayGunshotEffects(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
         {
             spriteController.TriggerGunshotAnimation();
             audioController.PlayGunshotSFX();
 
             gunshotEffectsFinished = false;
 
-            StartCoroutine(GunshotEffectsRoutine(shotDirection));
+            StartCoroutine(GunshotEffectsRoutine(shotDirection, projectileTr, projectileSr));
         }
-        private IEnumerator GunshotEffectsRoutine(int shotDirection)
+        private IEnumerator GunshotEffectsRoutine(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
         {
+            //Espera um frame para a animação de tiro começar
+            yield return new WaitForEndOfFrame();
+
             //Ativa After Images
             afterImagesManager.StartAfterImages(playerRb.transform, playerSr);
+            afterImagesManager.StartAfterImages(projectileTr, projectileSr);
 
             //Aplica recoil
             gunshotCameraRecoil.ApplyEffect(-shotDirection);
+
+            //Aplica tremor do controle
+            if (inputHandler.isOnController)
+                controllerRumble.ApplyEffect(false);
 
             //Aplica knockback
             gunshotKnockback.ApplyEffect(-shotDirection);
@@ -81,6 +103,13 @@ namespace Entities.Player
         {
             //Treme a câmera
             deathCameraShake.ApplyEffect();
+
+            //Aplica tremor do controle
+            if (inputHandler.isOnController)
+                controllerRumble.ApplyEffect(true);
+
+            //Faz o animator ser unscaledTime
+            spriteController.SetUnscaledTime();
 
             //Ativa time slow
             deathTimeSlow.ApplyEffect();

@@ -1,4 +1,3 @@
-using Entities;
 using UnityEngine;
 
 namespace Paint

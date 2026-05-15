@@ -19,7 +19,7 @@ namespace Entities.Enemy
 
             StartCoroutine(Routine());
         }
-        
+
         private IEnumerator Routine()
         {
             yield return new WaitUntil(() => effectsController.deathEffectsFinished);

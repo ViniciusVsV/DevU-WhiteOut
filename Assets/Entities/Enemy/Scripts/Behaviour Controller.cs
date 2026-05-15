@@ -7,20 +7,24 @@ namespace Entities.Enemy
     public class BehaviourController : MonoBehaviour
     {
         [SerializeField] private EnemyBehaviourData enemyBehaviourData;
+        [SerializeField] private SpriteController spriteController;
 
         private Rigidbody2D rb;
         private int moveDirection = 1;
-
-        [Header("Booleans")]
         public bool canMove;
-        public bool canFlip;
+
+        private Coroutine coroutine;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
 
             canMove = true;
-            canFlip = true;
+        }
+
+        private void Update()
+        {
+            spriteController.SetMovementValues(Mathf.Abs(rb.linearVelocityX));
         }
 
         private void FixedUpdate()
@@ -33,17 +37,13 @@ namespace Entities.Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (canFlip && collision.CompareTag("Border"))
-            {
-                canFlip = false;
-
-                StartCoroutine(FlipRoutine());
-            }
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
             if (collision.CompareTag("Border"))
-                canFlip = true;
+            {
+                if (coroutine != null)
+                    return;
+
+                coroutine = StartCoroutine(FlipRoutine());
+            }
         }
 
         private IEnumerator FlipRoutine()
@@ -54,10 +54,14 @@ namespace Entities.Enemy
 
             yield return new WaitForSeconds(Random.Range(enemyBehaviourData.minWaitDuration, enemyBehaviourData.maxWaitDuration));
 
-            transform.localScale *= new Vector2(-1, 1);
+            spriteController.Flip();
             moveDirection *= -1;
 
             canMove = true;
+
+            yield return new WaitForSeconds(0.1f);
+
+            coroutine = null;
         }
     }
 }

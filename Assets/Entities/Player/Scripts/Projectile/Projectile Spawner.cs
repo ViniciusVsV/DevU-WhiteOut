@@ -7,11 +7,15 @@ namespace Entities.Player
         [SerializeField] private GameObject projectilePrefab;
         [SerializeField] private Transform spawnPoint;
 
-        public void SpawnProjectile(Vector2 direction)
+        public (Transform, SpriteRenderer) SpawnProjectile(Vector2 direction)
         {
-            float angle = direction.x == 1 ? 0 : 180;
+            float angle = direction.x == 1 ? -90 : 90;
 
-            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(0, 0, angle));
+            GameObject newProjectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.Euler(0, 0, angle));
+
+            SpriteRenderer projectileSr = newProjectile.GetComponentInChildren<SpriteRenderer>();
+
+            return (newProjectile.transform, projectileSr);
         }
     }
 }

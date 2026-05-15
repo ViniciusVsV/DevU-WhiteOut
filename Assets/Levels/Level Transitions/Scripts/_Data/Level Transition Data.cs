@@ -8,6 +8,9 @@ namespace Levels.LevelTransitions
     {
         public Material transitionShaderMaterial;
 
+        [Header("Scene Order")]
+        public string[] sceneNames;
+
         [Header("Level Enter")]
         public float enterDuration;
         public Ease enterEase;

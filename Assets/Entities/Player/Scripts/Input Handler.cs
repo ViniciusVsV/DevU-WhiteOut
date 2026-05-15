@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,21 @@ namespace Entities.Player
         public bool movementDisabled;
         public bool jumpDisabled;
         public bool attackDisabled;
+        public bool pauseDisabled;
+        public bool isPaused;
+        public bool isOnController;
+        public bool isTesting;
+
+        public static event Action OnPausePressed;
+
+        private void Awake()
+        {
+            if (!isTesting)
+            {
+                inputsDisabled = true;
+                pauseDisabled = true;
+            }
+        }
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -23,15 +39,16 @@ namespace Entities.Player
                 return;
             }
 
-            if (context.performed)
-            {
-                Vector2 moveDirection = context.ReadValue<Vector2>();
-                moveDirection = moveDirection.normalized;
+            Vector2 moveDirection = context.ReadValue<Vector2>();
+            moveDirection = moveDirection.normalized;
 
-                behaviourController.Move((int)moveDirection.x);
-            }
-            else
+            if (Mathf.Abs(moveDirection.x) < 0.2f)
+            {
                 behaviourController.Move(0);
+                return;
+            }
+
+            behaviourController.Move((int)Mathf.Sign(moveDirection.x));
         }
 
         public void OnJump(InputAction.CallbackContext context)
@@ -52,6 +69,58 @@ namespace Entities.Player
 
             if (context.performed)
                 StartCoroutine(behaviourController.Attack());
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (pauseDisabled)
+                return;
+
+            if (context.performed)
+            {
+                if (isPaused)
+                {
+                    inputsDisabled = false;
+                    isPaused = false;
+                }
+                else
+                {
+                    inputsDisabled = true;
+                    isPaused = true;
+                }
+
+                OnPausePressed?.Invoke();
+            }
+        }
+
+        public void CheckForController(InputAction.CallbackContext context)
+        {
+            if (context.control.device is Gamepad)
+            {
+                isOnController = true;
+                Cursor.visible = false;
+            }
+            else
+            {
+                isOnController = false;
+                Cursor.visible = true;
+            }
+        }
+
+        public void EnableInputs()
+        {
+            inputsDisabled = false;
+            pauseDisabled = false;
+        }
+        public void DisableInputs()
+        {
+            if (inputsDisabled)
+                return;
+
+            inputsDisabled = true;
+            pauseDisabled = true;
+
+            behaviourController.Move(0);
         }
     }
 }

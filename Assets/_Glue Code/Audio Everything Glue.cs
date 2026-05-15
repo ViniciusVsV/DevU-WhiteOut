@@ -7,7 +7,7 @@ public class AudioEverythingGlue : MonoBehaviour
 
     private void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager = PersistenceHandler.Instance.audioManager;
     }
 
     private void OnEnable()

@@ -7,13 +7,13 @@ namespace Paint
     {
         [Header("Technical")]
         public GameObject paintPrefab;
-        public LayerMask paintLayer;
         public string paintHolderTag;
 
         [Header("Sprites")]
         public Sprite[] paintSprites;
 
-        [Header("Checks")]
+        [Header("Paint Check")]
+        public LayerMask paintLayer;
         public float paintCheckRadius;
     }
 }

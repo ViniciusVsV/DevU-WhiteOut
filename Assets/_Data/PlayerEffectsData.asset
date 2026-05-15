@@ -22,9 +22,16 @@ MonoBehaviour:
   partialTransitionEase: 18
   partialTransitionProgress: 0.5
   slowDuration: 1
+  deathLowFrequency: 1
+  deathHighFrequency: 1
+  deathRumbleDuration: 0.3
   cameraRecoilStrength: 2
   gunshotKnockbackForce: 40
   knockbackDuration: 0.1
   imageDuration: 0.2
   startingAlpha: 0.5
   delayBetweenImages: 0.06
+  gunshotLowFrequency: 1
+  gunshotHighFrequency: 1
+  gunshotRumbleDuration: 0.2
+  runParticlesCooldown: 0.07

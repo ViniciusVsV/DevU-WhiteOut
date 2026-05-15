@@ -11,7 +11,6 @@ namespace Entities.Player
 
         [Header("Player Scripts")]
         [SerializeField] private EffectsController effectsController;
-        [SerializeField] private CapsuleCollider2D attackCollider;
         [SerializeField] private SpriteController spriteController;
         [SerializeField] private ProjectileSpawner projectileSpawner;
 
@@ -46,15 +45,19 @@ namespace Entities.Player
         private void Update()
         {
             isGrounded = Physics2D.OverlapBox(groundCheckPoint.position, groundCheckBoxSize, 0f, groundLayerMask);
-            coyoteTimer = isGrounded ? playerBehaviourData.coyoteTime : coyoteTimer - Time.deltaTime;
 
+            coyoteTimer = isGrounded ? playerBehaviourData.coyoteTime : coyoteTimer - Time.deltaTime;
             remainingJumps = isGrounded ? playerBehaviourData.extraJumps : remainingJumps;
+
             jumpBufferTimer -= Time.deltaTime;
             Jump();
 
             rb.gravityScale = rb.linearVelocityY >= 0 ? playerBehaviourData.baseGravity : playerBehaviourData.fallGravity;
 
-            effectsController.PlayWalkEffects();
+            spriteController.SetMovementValues(Mathf.Abs(rb.linearVelocityX), rb.linearVelocityY);
+            spriteController.SetJumpBoolean(!isGrounded);
+
+            effectsController.PlayWalkEffects(isGrounded);
         }
 
         private void FixedUpdate()
@@ -85,26 +88,30 @@ namespace Entities.Player
             if (!canJump)
                 return;
 
-            if (jumpBufferTimer >= Mathf.Epsilon && (coyoteTimer >= Mathf.Epsilon || remainingJumps > 0))
-            {
-                jumpBufferTimer = 0;
+            bool hasCoyoteTime = coyoteTimer >= Mathf.Epsilon;
+            bool hasRemainingJumps = remainingJumps > 0;
 
-                if (!isGrounded)
-                {
-                    if (remainingJumps > 0)
-                        remainingJumps--;
-                    else
-                        return;
-                }
+            if (jumpBufferTimer < Mathf.Epsilon || (!hasCoyoteTime && !hasRemainingJumps))
+                return;
 
-                rb.linearVelocityY = 0;
-                rb.AddForce(playerBehaviourData.jumpForce * Vector2.up, ForceMode2D.Impulse);
-            }
+            if (!hasCoyoteTime)
+                remainingJumps--;
+
+            jumpBufferTimer = 0;
+
+            rb.linearVelocityY = 0;
+            rb.AddForce(playerBehaviourData.jumpForce * Vector2.up, ForceMode2D.Impulse);
+
+            effectsController.PlayJumpEffects();
         }
         public void JumpCut()
         {
             if (rb.linearVelocityY > 0)
+            {
                 rb.linearVelocityY *= playerBehaviourData.jumpCutMultiplier;
+
+                coyoteTimer = 0;
+            }
         }
 
         public IEnumerator Attack()
@@ -115,8 +122,8 @@ namespace Entities.Player
             canAttack = false;
             canMove = false;
 
-            projectileSpawner.SpawnProjectile(Vector2.one * lastMoveDirection);
-            effectsController.PlayGunshotEffects(lastMoveDirection);
+            var (projectileTr, projectileSr) = projectileSpawner.SpawnProjectile(Vector2.one * lastMoveDirection);
+            effectsController.PlayGunshotEffects(lastMoveDirection, projectileTr, projectileSr);
 
             yield return new WaitUntil(() => effectsController.gunshotEffectsFinished);
 
