@@ -1,3 +1,4 @@
+using AudioSystem;
 using DG.Tweening;
 using Levels.LevelSaveSystem;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Levels.Level0
         [SerializeField] private AudioSource musicSource;
         [SerializeField] private Material transitionMaterial;
         [SerializeField] private LevelManager levelManager;
+        [SerializeField] private AudioManager audioManager;
 
         private void Awake()
         {

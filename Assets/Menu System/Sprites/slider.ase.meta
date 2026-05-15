@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf269874f3c61f845bf76487e55c2354
+guid: a7d7c0597fbe05248a84c416c4d70757
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639143381293563819
+  platformSettingsDirtyTick: 639144558050772193
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: slider
+  - name: slider (1)
     originalName: 
     pivot: {x: 0.5, y: -0.923077}
     alignment: 9
@@ -139,7 +139,7 @@ ScriptedImporter:
       y: 4
       width: 10
       height: 13
-    spriteID: 7f9e87adec1631c4ab819b5004eb850d
+    spriteID: afca5e33fc9e402448023770be88ef2f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,12 +153,12 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2877262645
+      value0: 458934977
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: slider
+    name: slider (1)
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -171,7 +171,7 @@ ScriptedImporter:
         y: 12
         width: 10
         height: 13
-      spriteId: 7f9e87adec1631c4ab819b5004eb850d
+      spriteId: afca5e33fc9e402448023770be88ef2f
     linkedCells: []
     tileCells: []
     tileSetIndex: 0

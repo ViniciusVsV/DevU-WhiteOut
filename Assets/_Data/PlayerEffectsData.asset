@@ -21,6 +21,11 @@ MonoBehaviour:
   partialTransitionDuration: 1
   partialTransitionEase: 18
   partialTransitionProgress: 0.5
+  normalCutoff: 22000
+  muffledCutoff: 200
+  muffleDuration: 0
+  demuffleDuration: 2
+  muffleEase: 1
   slowDuration: 1
   deathLowFrequency: 1
   deathHighFrequency: 1

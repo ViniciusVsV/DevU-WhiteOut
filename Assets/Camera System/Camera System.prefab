@@ -370,6 +370,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5873006372502875412}
     m_Modifications:
+    - target: {fileID: 4343557800639321176, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 35.68988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343557800639321176, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343557800639321176, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343557800639321176, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343557800639321176, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4933839441974671839, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
       propertyPath: m_Name
       value: Background Snow Particles
@@ -380,11 +400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14
+      value: 34.82
       objectReference: {fileID: 0}
     - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8760356034865338301, guid: 8cefe33b48138dc42adeee9a2b29b7ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -432,6 +452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5873006372502875412}
     m_Modifications:
+    - target: {fileID: 4343557800639321176, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4933839441974671839, guid: b5370e28f2276a747970dfe8e4a4de92, type: 3}
       propertyPath: m_Name
       value: Foreground Snow Particles

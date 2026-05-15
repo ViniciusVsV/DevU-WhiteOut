@@ -8,5 +8,7 @@ namespace Entities.Player
         public AudioClip[] walkSFXs;
         public AudioClip jumpSFX;
         public AudioClip gunshotSFX;
+        public AudioClip deathSFX;
+        public AudioClip explosionSFX;
     }
 }

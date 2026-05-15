@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3681462531156544395}
   m_Layer: 0
-  m_Name: Enemy Setup 1
+  m_Name: Enemy Setup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4560580036685790132}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1580349738730853903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4363478521143167084}
+  - component: {fileID: 7212278399107181010}
+  m_Layer: 10
+  m_Name: Audio Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4363478521143167084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580349738730853903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1281506011450724135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7212278399107181010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580349738730853903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214e47ea4d565c34097fc3b86ffa4132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemy.AudioController
+  deathSFX: {fileID: 8300000, guid: 41c3b8c96f0ad674b80b4bc7a63a0b15, type: 3}
 --- !u!1 &2184777407598007342
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,9 +506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entities.Enemy.EffectsController
   enemyRb: {fileID: 8813739266638617933}
-  enemySr: {fileID: 7126124412911582977}
   enemyWeaponCol: {fileID: 2316059551714644013}
   spriteController: {fileID: 6786136596035563827}
+  audioController: {fileID: 7212278399107181010}
   deathParticles: {fileID: 4524390311183190734}
   deathEffectsFinished: 0
 --- !u!1 &7646286090815030521
@@ -647,6 +692,7 @@ Transform:
   m_Children:
   - {fileID: 854546759040220850}
   - {fileID: 3764990191756495591}
+  - {fileID: 4363478521143167084}
   m_Father: {fileID: 632072943537087294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8805011390838185583

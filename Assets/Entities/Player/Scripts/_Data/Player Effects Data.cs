@@ -23,6 +23,13 @@ namespace Entities.Player
         public Ease partialTransitionEase;
         [Range(-1, 1)] public float partialTransitionProgress;
 
+        [Header("Music Muffle")]
+        public float normalCutoff = 22000f;
+        public float muffledCutoff = 800f;
+        public float muffleDuration;
+        public float demuffleDuration;
+        public Ease muffleEase;
+
         [Header("Time Slow")]
         public float slowDuration;
 

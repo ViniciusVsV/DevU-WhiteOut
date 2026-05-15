@@ -37,6 +37,23 @@ namespace Levels.LevelTransitions
             });
         }
 
+        public void ExitToMenu()
+        {
+            OnLevelExit?.Invoke();
+
+            canvasObject.SetActive(true);
+
+            levelTransitionData.transitionShaderMaterial.SetTexture("_Transition_Texture", levelTransitionData.exitTexture);
+
+            levelTransitionData.transitionShaderMaterial.DOFloat(-1f, "_Progress", levelTransitionData.exitDuration)
+            .SetEase(levelTransitionData.exitEase)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                SceneManager.LoadScene("Level 0");
+            });
+        }
+
         private void OnDisable()
         {
             levelTransitionData.transitionShaderMaterial.DOKill();

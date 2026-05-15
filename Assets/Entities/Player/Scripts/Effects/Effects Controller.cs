@@ -31,6 +31,7 @@ namespace Entities.Player
         [SerializeField] private DeathParticles deathParticles;
         [SerializeField] private DeathKnockback deathKnockback;
         [SerializeField] private DeathTimeSlow deathTimeSlow;
+        [SerializeField] private DeathMusicMuffle deathMusicMuffle;
 
         public bool gunshotEffectsFinished;
         public bool deathEffectsFinished;
@@ -45,11 +46,9 @@ namespace Entities.Player
 
         public void PlayJumpEffects()
         {
-            //Dá play nas partículas de pulo
             movementParticles.PlayJumpParticles();
 
-            //Chama o efeito sonoro de pular
-
+            audioController.PlayJumpSFX();
         }
 
         public void PlayGunshotEffects(int shotDirection, Transform projectileTr, SpriteRenderer projectileSr)
@@ -92,6 +91,7 @@ namespace Entities.Player
         public void PlayDeathEffects(Vector3 collisionDirection)
         {
             spriteController.TriggerDeathAnimation();
+            audioController.PlayDeathSFX();
 
             playerRb.simulated = false;
 
@@ -101,6 +101,9 @@ namespace Entities.Player
         }
         private IEnumerator DeathEffectsRoutine(Vector3 collisionDirection)
         {
+            //Ativa muffle da música
+            deathMusicMuffle.ApplyEffect();
+
             //Treme a câmera
             deathCameraShake.ApplyEffect();
 
@@ -125,6 +128,9 @@ namespace Entities.Player
 
             //Desativa o sprite do player
             spriteController.DisableSprite();
+
+            //Chama o áudio da explosão
+            audioController.PlayExplosionSFX();
 
             //Invoca as partículas
             deathParticles.ApplyEffect();

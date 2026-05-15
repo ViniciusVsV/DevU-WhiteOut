@@ -1,3 +1,4 @@
+using System;
 using MenuSystem.Sections;
 using UnityEngine;
 
@@ -5,17 +6,26 @@ namespace MenuSystem
 {
     public class PauseMenuController : MonoBehaviour
     {
+        [SerializeField] private MenuData menuData;
         [SerializeField] private PauseSection pauseSection;
-        [SerializeField] private ConfigSection configSection;
+
+        private AudioLowPassFilter audioLowPassFilter;
 
         private bool isPaused;
+
+        public static event Action OnMenuReturned;
+
+        private void Start()
+        {
+            audioLowPassFilter = GameObject.FindWithTag("MusicSource").GetComponent<AudioLowPassFilter>();
+        }
 
         public void PauseGame()
         {
             if (isPaused)
             {
                 pauseSection.Deactivate();
-                configSection.Deactivate();
+                audioLowPassFilter.cutoffFrequency = menuData.normalMuffle;
 
                 Time.timeScale = 1f;
 
@@ -28,15 +38,12 @@ namespace MenuSystem
 
             Time.timeScale = 0;
             pauseSection.Activate();
+            audioLowPassFilter.cutoffFrequency = menuData.pausedMuffle;
         }
 
-        public void OpenConfigSection()
+        public void ReturnToMenu()
         {
-            configSection.Activate();
-        }
-        public void CloseConfigSection()
-        {
-            configSection.Deactivate();
+            OnMenuReturned?.Invoke();
         }
     }
 }

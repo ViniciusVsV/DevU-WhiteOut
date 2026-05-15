@@ -23,5 +23,15 @@ namespace Entities.Player
         {
             OnSoundPlayed?.Invoke(playerAudioData.gunshotSFX);
         }
+
+        public void PlayDeathSFX()
+        {
+            OnSoundPlayed?.Invoke(playerAudioData.deathSFX);
+        }
+
+        public void PlayExplosionSFX()
+        {
+            OnSoundPlayed?.Invoke(playerAudioData.explosionSFX);
+        }
     }
 }

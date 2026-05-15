@@ -11,6 +11,7 @@ namespace Entities.Enemy
 
         [Header("Enemy Scripts")]
         [SerializeField] private SpriteController spriteController;
+        [SerializeField] private AudioController audioController;
 
         [Header("Death Effects")]
         [SerializeField] private DeathParticles deathParticles;
@@ -20,6 +21,7 @@ namespace Entities.Enemy
         public void PlayDeathEffects(Vector2 colDirection)
         {
             spriteController.TriggerDeathAnimation();
+            audioController.PlayDeathSFX();
 
             deathEffectsFinished = false;
 

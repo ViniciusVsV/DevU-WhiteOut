@@ -14,8 +14,6 @@ namespace Levels.Level0
 
         private void Awake()
         {
-            PlayerPrefs.DeleteAll();
-
             if (!PlayerPrefs.HasKey("SavedLevel"))
             {
                 continueGameButton.interactable = false;
@@ -32,6 +30,8 @@ namespace Levels.Level0
 
         public void ContinueGame()
         {
+            newGameButton.interactable = false;
+
             //Desativa todos os botões
             buttonAnimations.FadeOutButtons(true);
 

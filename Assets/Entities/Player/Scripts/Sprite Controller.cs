@@ -6,6 +6,8 @@ namespace Entities.Player
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteController : MonoBehaviour
     {
+        [SerializeField] private AudioController audioController;
+
         private Animator animator;
         private SpriteRenderer sr;
 
@@ -62,5 +64,10 @@ namespace Entities.Player
         }
 
         public SpriteRenderer GetSpriteRenderer() { return sr; }
+
+        public void PlayWalkSFX()
+        {
+            audioController.PlayWalkSFX();
+        }
     }
 }

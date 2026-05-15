@@ -12,6 +12,7 @@ TagManager:
   - PlayerProjectile
   - MovingPlatform
   - CameraConfiner
+  - MusicSource
   layers:
   - Default
   - TransparentFX

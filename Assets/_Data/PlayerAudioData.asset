@@ -12,6 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a3b875be1cbb4c82fee886bc3be95, type: 3}
   m_Name: PlayerAudioData
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerAudioData
-  walkSFXs: []
-  jumpSFX: {fileID: 0}
+  walkSFXs:
+  - {fileID: 8300000, guid: ea2279b0aba9e1f4da847b4376b5e197, type: 3}
+  - {fileID: 8300000, guid: 09a0d05742cdae245b87c7732e5b8985, type: 3}
+  - {fileID: 8300000, guid: 67a5867cb0842a54e882b0b222557061, type: 3}
+  - {fileID: 8300000, guid: 4d86270113ca4d448a31f26f9ff569e6, type: 3}
+  - {fileID: 8300000, guid: d1196e174826f9443989270106d768f7, type: 3}
+  - {fileID: 8300000, guid: d051dac002d559c4e98600c5fe5bb2e0, type: 3}
+  - {fileID: 8300000, guid: 2cfe0cbd53dce5243b940de5618fc8ae, type: 3}
+  - {fileID: 8300000, guid: 1c9303238d0c37d48b016877be8b1494, type: 3}
+  - {fileID: 8300000, guid: e01a36c511eb64c4c8aa03725f934740, type: 3}
+  - {fileID: 8300000, guid: 423b1a8b9c5df3649bf013b8979aba5f, type: 3}
+  - {fileID: 8300000, guid: cd677a248d786be4eb5fd82782cb23a1, type: 3}
+  - {fileID: 8300000, guid: 8e0691ca9690c7d429814d847d835922, type: 3}
+  - {fileID: 8300000, guid: 7d4dfcf14255df6479ed563c5b46b3ba, type: 3}
+  - {fileID: 8300000, guid: ade3db2754c545e4bab8782ffb2028fb, type: 3}
+  - {fileID: 8300000, guid: 3328895199883b14eafe6a5aba132448, type: 3}
+  - {fileID: 8300000, guid: 668e6c2aadb7b2d4b9dcde6bb0ae83a6, type: 3}
+  - {fileID: 8300000, guid: cac74b5f8484c2f45b47a66783ad965c, type: 3}
+  - {fileID: 8300000, guid: eb515d036608b4545a4b472bcef0fab9, type: 3}
+  - {fileID: 8300000, guid: 2b649edb0b1e4174cbd58a04674a8851, type: 3}
+  - {fileID: 8300000, guid: 2473a36e23edf364daba162268e1e34a, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 183d7a66a23fd674aabc69b207acce85, type: 3}
   gunshotSFX: {fileID: 8300000, guid: d63c2839914e628468b8d33850e9b7ff, type: 3}
+  deathSFX: {fileID: 8300000, guid: 41c3b8c96f0ad674b80b4bc7a63a0b15, type: 3}
+  explosionSFX: {fileID: 8300000, guid: 41c3b8c96f0ad674b80b4bc7a63a0b15, type: 3}

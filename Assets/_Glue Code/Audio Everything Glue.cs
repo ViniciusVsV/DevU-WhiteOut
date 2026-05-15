@@ -13,10 +13,18 @@ public class AudioEverythingGlue : MonoBehaviour
     private void OnEnable()
     {
         Entities.Player.AudioController.OnSoundPlayed += PlaySFX;
+        Entities.Player.AudioController.OnSoundPlayed += PlaySFX;
+        DoorSystem.DoorBehaviour.OnSoundPlayed += PlaySFX;
+        DoorSystem.KeyBehaviour.OnSoundPlayed += PlaySFX;
+        MovingPlatform.LeverBehaviour.OnSoundPlayed += PlaySFX;
     }
     private void OnDisable()
     {
         Entities.Player.AudioController.OnSoundPlayed -= PlaySFX;
+        Entities.Player.AudioController.OnSoundPlayed -= PlaySFX;
+        DoorSystem.DoorBehaviour.OnSoundPlayed -= PlaySFX;
+        DoorSystem.KeyBehaviour.OnSoundPlayed -= PlaySFX;
+        MovingPlatform.LeverBehaviour.OnSoundPlayed -= PlaySFX;
     }
 
     public void PlaySFX(AudioClip sfx)
