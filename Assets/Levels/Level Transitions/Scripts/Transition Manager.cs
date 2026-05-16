@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,9 @@ namespace Levels.LevelTransitions
         [SerializeField] private LevelFail levelFail;
         [SerializeField] private LevelExit levelExit;
         [SerializeField] private Canvas canvas;
+        [SerializeField] private GameObject canvasObject;
+
+        private Camera mainCamera;
 
         private void Awake()
         {
@@ -29,7 +33,17 @@ namespace Levels.LevelTransitions
 
         private void Start()
         {
-            Camera mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            StartCoroutine(SearchMainCam());
+        }
+
+        private IEnumerator SearchMainCam()
+        {
+            while (mainCamera == null)
+            {
+                mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+                yield return null;
+            }
+
             canvas.worldCamera = mainCamera;
         }
 
@@ -41,6 +55,11 @@ namespace Levels.LevelTransitions
         public void ExitLevel()
         {
             levelExit.ExitLevel();
+        }
+
+        public void ActivateTransitionScreen()
+        {
+            canvasObject.SetActive(true);
         }
     }
 }

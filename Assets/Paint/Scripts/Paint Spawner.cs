@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Paint
@@ -9,7 +10,16 @@ namespace Paint
 
         private void Start()
         {
-            paintHolder = GameObject.FindWithTag(paintData.paintHolderTag).transform;
+            StartCoroutine(SearchPaintHolder());
+        }
+
+        private IEnumerator SearchPaintHolder()
+        {
+            while (paintHolder == null)
+            {
+                paintHolder = GameObject.FindWithTag(paintData.paintHolderTag).transform;
+                yield return null;
+            }
         }
 
         public void SpawnPaint(Vector2 position)

@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8766711319805334488}
+  - component: {fileID: 7903084616120058358}
   - component: {fileID: 7092570774599152785}
+  - component: {fileID: -245192871944428571}
   - component: {fileID: 3007137923825151166}
   - component: {fileID: 5776210931926759317}
   m_Layer: 0
@@ -34,6 +36,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7903084616120058358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962663885059184766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b5cf9b00eff6a4b856fbda867c72e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunEnabler.PersistenceHandler
 --- !u!114 &7092570774599152785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0686b43a40c1e6147bb81629bd0f31fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunEnabler.EnableGun
+  collectedSFX: {fileID: 8300000, guid: 112ed09fa8eda7f44b48317c7181a2b4, type: 3}
+--- !u!114 &-245192871944428571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962663885059184766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd950392920c56846b1834848de27ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunEnabler.Wobble
+  moveAmount: 0.25
+  moveDuration: 1
 --- !u!61 &3007137923825151166
 BoxCollider2D:
   m_ObjectHideFlags: 0

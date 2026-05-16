@@ -1,26 +1,25 @@
 using System.Collections;
-using Entities.Player;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Playables;
 
 namespace Levels.Level0
 {
     public class NewGameHandler : MonoBehaviour
     {
-        [SerializeField] private Level0Data level0Data;
-
         [Header("Objects")]
         [SerializeField] private GameObject wallObject;
-        [SerializeField] private InputHandler inputHandler;
         [SerializeField] private CinemachineCamera uiCamera;
+        [SerializeField] private CinemachineCamera playerFocusCamera;
         [SerializeField] private CinemachineBrain mainCameraBrain;
-        [SerializeField] private GameObject tutorialTextObject;
         [SerializeField] private ButtonAnimations buttonAnimations;
+        [SerializeField] private PlayableDirector startCutscene;
+        [SerializeField] private Animator playerAnimator;
+        [SerializeField] private RuntimeAnimatorController mainPlayerController;
 
         private void Awake()
         {
-            tutorialTextObject.SetActive(false);
+
         }
 
         public void StartNewGame()
@@ -33,19 +32,34 @@ namespace Levels.Level0
 
             wallObject.SetActive(false);
 
-            uiCamera.Priority = -10;
-
-            inputHandler.inputsDisabled = false;
-
-            //Espera o tempo de transição da câmera para aparecer o tutorial de andar
             StartCoroutine(Routine());
         }
 
         private IEnumerator Routine()
         {
+            //Ativa a câmera de foco no player
+            uiCamera.Priority = -10;
+            playerFocusCamera.Priority = 100;
+
+            //Espera o tempo de transição da câmera
             yield return new WaitForSeconds(mainCameraBrain.DefaultBlend.Time);
 
-            tutorialTextObject.SetActive(true);
+            //Dá play na timeline
+            startCutscene.Play();
+        }
+
+        private void OnEnable()
+        {
+            startCutscene.stopped += SwitchAnimator;
+        }
+        private void OnDisable()
+        {
+            startCutscene.stopped -= SwitchAnimator;
+        }
+
+        private void SwitchAnimator(PlayableDirector director)
+        {
+            playerAnimator.runtimeAnimatorController = mainPlayerController;
         }
     }
 }

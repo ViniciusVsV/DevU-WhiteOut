@@ -15,6 +15,7 @@ namespace Entities.Player
         [SerializeField] private EffectsController effectsController;
         private Collider2D col;
 
+        public static event Action OnPlayerDeathDetected;
         public static event Action OnPlayerDeath;
 
         private void Awake()
@@ -27,6 +28,8 @@ namespace Entities.Player
             if (playerBehaviourData.hostileTags.Contains(collision.tag))
             {
                 col.enabled = false;
+
+                OnPlayerDeathDetected?.Invoke();
 
                 inputHandler.DisableInputs();
 

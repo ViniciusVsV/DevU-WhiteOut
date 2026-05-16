@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8964597851939815242}
   - component: {fileID: 3839491661528366491}
+  - component: {fileID: 568268331177952038}
   - component: {fileID: 7068647648527282931}
   - component: {fileID: 3822928501565383208}
   m_Layer: 0
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorSystem.KeyBehaviour
   collectSFX: {fileID: 8300000, guid: 13aa9b2712b8877449d90a742c295c8d, type: 3}
   hasBeenCollected: 0
+--- !u!114 &568268331177952038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518159397113329880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe58de3731f0dd418f4624b920e619c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorSystem.KeyWobble
+  moveAmount: 0.25
+  moveDuration: 1
 --- !u!58 &7068647648527282931
 CircleCollider2D:
   m_ObjectHideFlags: 0

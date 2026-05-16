@@ -38,8 +38,6 @@ namespace Levels.LevelSaveSystem
             if (levelSaveData.ignoredScenes.Contains(scene.name))
                 return;
 
-            Debug.Log("Salvou a cena: " + scene.name);
-
             levelSave.SaveLevel(scene.name);
         }
 

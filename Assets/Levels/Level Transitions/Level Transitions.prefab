@@ -249,6 +249,7 @@ MonoBehaviour:
   levelFail: {fileID: 4655808853515998386}
   levelExit: {fileID: 550181208757251557}
   canvas: {fileID: 2718111467397320210}
+  canvasObject: {fileID: 985540424903212091}
 --- !u!1 &6770080289349716995
 GameObject:
   m_ObjectHideFlags: 0

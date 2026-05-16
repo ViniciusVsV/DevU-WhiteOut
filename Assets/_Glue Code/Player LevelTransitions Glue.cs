@@ -16,6 +16,7 @@ public class PlayerLevelTransitionsGlue : MonoBehaviour
     private void OnEnable()
     {
         DeathDetector.OnPlayerDeath += FailLevel;
+        DeathDetector.OnPlayerDeathDetected += ActivateTransitionScreen;
 
         LevelEnter.OnLevelEntered += EnableInputs;
         LevelReEnter.OnLevelReEntered += EnableInputs;
@@ -24,10 +25,16 @@ public class PlayerLevelTransitionsGlue : MonoBehaviour
     private void OnDisable()
     {
         DeathDetector.OnPlayerDeath -= FailLevel;
+        DeathDetector.OnPlayerDeathDetected -= ActivateTransitionScreen;
 
         LevelEnter.OnLevelEntered -= EnableInputs;
         LevelReEnter.OnLevelReEntered -= EnableInputs;
         LevelExit.OnLevelExit -= DisableInputs;
+    }
+
+    public void ActivateTransitionScreen()
+    {
+        transitionManager.ActivateTransitionScreen();
     }
 
     public void FailLevel()

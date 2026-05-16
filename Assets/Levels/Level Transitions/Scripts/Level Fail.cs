@@ -15,7 +15,7 @@ namespace Levels.LevelTransitions
 
             levelTransitionData.transitionShaderMaterial.SetTexture("_Transition_Texture", levelTransitionData.failTexture);
 
-            levelTransitionData.transitionShaderMaterial.DOFloat(-1f, "_Progress", levelTransitionData.failDuration)
+            levelTransitionData.transitionShaderMaterial.DOFloat(-0.1f, "_Progress", levelTransitionData.failDuration)
             .SetEase(levelTransitionData.failEase)
             .SetDelay(levelTransitionData.failStartDelay)
             .SetUpdate(true)

@@ -17,6 +17,7 @@ public class AudioEverythingGlue : MonoBehaviour
         DoorSystem.DoorBehaviour.OnSoundPlayed += PlaySFX;
         DoorSystem.KeyBehaviour.OnSoundPlayed += PlaySFX;
         MovingPlatform.LeverBehaviour.OnSoundPlayed += PlaySFX;
+        GunEnabler.EnableGun.OnSoundPlayed += PlaySFX;
     }
     private void OnDisable()
     {
@@ -25,6 +26,7 @@ public class AudioEverythingGlue : MonoBehaviour
         DoorSystem.DoorBehaviour.OnSoundPlayed -= PlaySFX;
         DoorSystem.KeyBehaviour.OnSoundPlayed -= PlaySFX;
         MovingPlatform.LeverBehaviour.OnSoundPlayed -= PlaySFX;
+        GunEnabler.EnableGun.OnSoundPlayed -= PlaySFX;
     }
 
     public void PlaySFX(AudioClip sfx)

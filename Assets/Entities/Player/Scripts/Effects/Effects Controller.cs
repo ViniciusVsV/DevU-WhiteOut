@@ -111,6 +111,9 @@ namespace Entities.Player
             if (inputHandler.isOnController)
                 controllerRumble.ApplyEffect(true);
 
+            //chama a transição parcial
+            deathPartialTransition.ApplyEffect();
+
             //Faz o animator ser unscaledTime
             spriteController.SetUnscaledTime();
 
@@ -120,8 +123,6 @@ namespace Entities.Player
             //Aplica knockback
             deathKnockback.ApplyEffect(-collisionDirection);
 
-            //chama a transição parcial
-            deathPartialTransition.ApplyEffect();
 
             //Espera a animação de morte acabar
             yield return new WaitForSecondsRealtime(spriteController.GetDeathAnimationLength());
