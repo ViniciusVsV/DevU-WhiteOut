@@ -2973,11 +2973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873006372502875412, guid: 21f6b647e1589f642a883e3b98a62169, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.150001
+      value: 2.1500015
       objectReference: {fileID: 0}
     - target: {fileID: 5873006372502875412, guid: 21f6b647e1589f642a883e3b98a62169, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5299995
+      value: -4.0299973
       objectReference: {fileID: 0}
     - target: {fileID: 7575180736386438325, guid: 21f6b647e1589f642a883e3b98a62169, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30408,7 +30408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7065262777974911066, guid: e3d836d029059e545a94c07f9c63b88e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.63
+      value: -14.129997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30773,6 +30773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuSystem.Sections.PauseSection
   sectionObject: {fileID: 1774154920}
+  startingObject: {fileID: 1350302077}
 --- !u!224 &2078760697
 RectTransform:
   m_ObjectHideFlags: 0

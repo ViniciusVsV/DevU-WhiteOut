@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 53468212}
   - component: {fileID: 53468211}
   - component: {fileID: 53468210}
-  - component: {fileID: 53468216}
   m_Layer: 0
   m_Name: Glue Code
   m_TagString: Untagged
@@ -278,18 +277,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &53468216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53468209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fcfea420eac2a348990186f895913ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerGunEnablerGlue
 --- !u!1 &64058318
 GameObject:
   m_ObjectHideFlags: 0
@@ -13956,7 +13943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuSystem.Sections.PauseSection
   sectionObject: {fileID: 346483577}
-  unpauseButton: {fileID: 812953661}
+  startingObject: {fileID: 1847694270}
 --- !u!224 &669166323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16582,7 +16569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873006372502875412, guid: 21f6b647e1589f642a883e3b98a62169, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.862
+      value: -4.361998
       objectReference: {fileID: 0}
     - target: {fileID: 7575180736386438325, guid: 21f6b647e1589f642a883e3b98a62169, type: 3}
       propertyPath: m_LocalPosition.x
