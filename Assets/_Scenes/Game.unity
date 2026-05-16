@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuSystem.Sections.PauseSection
   sectionObject: {fileID: 451818994}
+  unpauseButton: {fileID: 0}
 --- !u!1 &407765928
 GameObject:
   m_ObjectHideFlags: 0
