@@ -17,7 +17,7 @@ MonoBehaviour:
   fallGravity: 7
   jumpForce: 22
   jumpCutMultiplier: 0.35
-  extraJumps: 1
+  extraJumps: 0
   coyoteTime: 0.4
   jumpBuffer: 0.2
   hostileTags:
