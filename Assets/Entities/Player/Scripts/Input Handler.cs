@@ -14,7 +14,6 @@ namespace Entities.Player
         public bool inputsDisabled;
         public bool movementDisabled;
         public bool jumpDisabled;
-        public bool attackDisabled;
         public bool pauseDisabled;
         public bool isPaused;
         public bool isOnController;
@@ -64,10 +63,10 @@ namespace Entities.Player
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (inputsDisabled || attackDisabled)
+            if (inputsDisabled)
                 return;
 
-            if (context.performed)
+            if (context.performed && PlayerPrefs.HasKey("GunCollected"))
                 StartCoroutine(behaviourController.Attack());
         }
 

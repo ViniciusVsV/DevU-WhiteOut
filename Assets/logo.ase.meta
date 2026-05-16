@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a3264fac779f5af46ae7f44a1c8aa4ad
+guid: 69d1f2985a0866c4d84cb041fe97bb3e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639144681435464548
+  platformSettingsDirtyTick: 639144798533074680
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: particula 1
+  - name: logo
     originalName: 
-    pivot: {x: 0.5, y: -7.5}
+    pivot: {x: 0.4464286, y: -0.27083334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 2
-      height: 2
-    spriteID: c210f594201fb494795b4b48faf17f73
+      width: 56
+      height: 48
+    spriteID: e4ff5c94eaf4daf4e83d5b84654f9305
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -149,7 +149,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: particula 1_0
+  - name: logo_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -159,9 +159,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 16
-      height: 16
-    spriteID: 9f9bdefdc450d57499bfb308327d2948
+      width: 64
+      height: 64
+    spriteID: 58b19c8dc04d3b84bb8ad8348ca93914
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -174,25 +174,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3310444230
+      value0: 2933274727
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: particula 1
+    name: logo
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: particula 1
+    - name: logo
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 15
-        y: 15
-        width: 2
-        height: 2
-      spriteId: c210f594201fb494795b4b48faf17f73
+        x: 7
+        y: 13
+        width: 56
+        height: 48
+      spriteId: e4ff5c94eaf4daf4e83d5b84654f9305
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -238,5 +238,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
-  previousTextureSize: {x: 16, y: 16}
+  canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 64, y: 64}

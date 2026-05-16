@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,10 +18,12 @@ namespace Paint
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             if (scene.name != originalSceneName)
-            {
-                SceneManager.sceneLoaded -= OnSceneLoaded;
                 Destroy(gameObject);
-            }
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
     }
 }

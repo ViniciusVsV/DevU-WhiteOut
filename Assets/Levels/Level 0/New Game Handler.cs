@@ -25,6 +25,9 @@ namespace Levels.Level0
 
         public void StartNewGame()
         {
+            PlayerPrefs.DeleteKey("GunCollected");
+            PlayerPrefs.Save();
+
             //Desativa os botões de jogar
             buttonAnimations.FadeOutButtons(false);
 

@@ -151,16 +151,16 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: particula 2_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.40975744, y: 0.46841478}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 0
-      y: 0
-      width: 32
-      height: 32
+      x: 9
+      y: 13
+      width: 16
+      height: 16
     spriteID: 0e1fec43fb5606c4cb8086a84b059890
     spriteBone: []
     spriteOutline: []
