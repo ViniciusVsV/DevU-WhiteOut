@@ -1,5 +1,3 @@
-using DG.Tweening;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace MovingPlatform

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using MenuSystem.Sections;
 using UnityEngine;
 
@@ -8,8 +9,10 @@ namespace MenuSystem
     {
         [SerializeField] private MenuData menuData;
         [SerializeField] private PauseSection pauseSection;
+        private Canvas pauseCanvas;
 
         private AudioLowPassFilter audioLowPassFilter;
+        private Camera mainCamera;
 
         private bool isPaused;
 
@@ -18,6 +21,20 @@ namespace MenuSystem
         private void Start()
         {
             audioLowPassFilter = GameObject.FindWithTag("MusicSource").GetComponent<AudioLowPassFilter>();
+
+            pauseCanvas = GetComponent<Canvas>();
+            StartCoroutine(SearchMainCam());
+        }
+
+        private IEnumerator SearchMainCam()
+        {
+            while (mainCamera == null)
+            {
+                mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+                yield return null;
+            }
+
+            pauseCanvas.worldCamera = mainCamera;
         }
 
         public void PauseGame()
